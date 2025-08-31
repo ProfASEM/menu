@@ -1,0 +1,252 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Bona+Nova&display=swap');
+
+/*
+    Global Styles and Reset
+    ----------------------
+    Set font and box-sizing for consistency
+*/
+* {
+    font-family: 'Bona Nova', serif;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #fff2d84c;
+    animation: fadeIn 1s ease-in;
+}
+
+/*
+    Container Styles
+    ----------------
+    Responsive width for different screens
+*/
+.container {
+    width: 70%;
+    max-width: 1100px;
+    margin: 40px auto;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    padding: 24px 16px 32px 16px;
+}
+
+/*
+    Heading Styles
+*/
+h2 {
+    text-align: center;
+    color: #113946;
+    font-size: 2rem;
+    border-bottom: #BCA37F 3px solid;
+    margin-bottom: 24px;
+    padding-bottom: 8px;
+    animation: fadeInDown 1s ease-in ;
+}
+
+/*
+    Filter Buttons
+*/
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px 0;
+}
+
+.buttons button {
+    padding: 10px 22px;
+    font-size: 1.1rem;
+    background-color: #fff2d84c;
+    border-radius: 15px;
+    border-top: #EAD7BB 2px solid;
+    border-left: #EAD7BB 2px solid;
+    border-bottom: #BCA37F 2px solid;
+    border-right: #BCA37F 2px solid;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    outline: none;
+    animation: fadeInUp 1.5s ease-in ;
+}
+
+.buttons button:hover,
+.buttons button:focus {
+    background-color: #113946;
+    color: #fff;
+}
+
+/*
+    Menu Grid
+    --------
+    Responsive grid for menu cards
+*/
+.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    width: 100%;
+    animation: fadeInUp 2.0s ease-in-out ;
+
+}
+
+/*
+    Menu Card Styles
+*/
+.menu .card {
+    display: flex;
+    flex-direction: row;
+    background: #f9f6f1;
+    border-radius: 12px;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    overflow: hidden;
+    margin: 0;
+    min-height: 180px;
+    max-height: 220px;
+    transition: box-shadow 0.2s;
+}
+
+.menu .card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.30);
+}
+
+.menu .card .img {
+    width: 45%;
+    min-width: 120px;
+    max-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+}
+
+.menu .card .img img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: #BCA37F 1px solid;
+    border-radius: 10px;
+    display: block;
+}
+
+.menu .card .description {
+    flex: 1 1 0;
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.menu .card .description header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px dotted #BCA37F;
+    margin-bottom: 8px;
+    padding-bottom: 4px;
+}
+
+.menu .card .description header h4 {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    color: #113946;
+    margin: 0;
+}
+
+.menu .card .description .price {
+    color: #BCA37F;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.menu .card .description .info p {
+    margin: 0;
+    color: #444;
+    font-size: 0.98rem;
+    line-height: 1.5;
+}
+
+/*
+    Responsive Styles
+    -----------------
+    Adjust layout for tablets and mobile
+*/
+@media (max-width: 1000px) {
+    .container {
+        width: 95%;
+        padding: 12px 4px 24px 4px;
+    }
+    .menu .card {
+        flex-direction: column;
+        min-height: 220px;
+        max-height: none;
+        align-items: stretch;
+    }
+    .menu .card .img {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        height: 180px;
+    }
+    .menu .card .img img {
+        height: 100%;
+        object-fit: cover;
+    }
+    .menu .card .description {
+        padding: 10px 8px;
+    }
+}
+
+@media (max-width: 700px) {
+    .container {
+        width: 100%;
+        padding: 4px 0 16px 0;
+    }
+    .menu {
+        gap: 12px;
+    }
+    .menu .card {
+        min-height: 180px;
+    }
+}
+
+@media (max-width: 500px) {
+    h2 {
+        font-size: 1.3rem;
+        padding-bottom: 4px;
+    }
+    .container {
+        border-radius: 0;
+        box-shadow: none;
+        margin: 0;
+        padding: 0 0 8px 0;
+    }
+    .buttons button {
+        font-size: 0.98rem;
+        padding: 8px 10px;
+        border-radius: 10px;
+    }
+    .menu {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+    .menu .card {
+        min-height: 120px;
+        flex-direction: column;
+        border-radius: 8px;
+    }
+    .menu .card .img {
+        height: 100px;
+        
+    }
+    .menu .card .description {
+        padding: 6px 4px;
+    }
+}
