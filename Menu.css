@@ -81,7 +81,10 @@ h2 {
     background-color: #113946;
     color: #fff;
 }
-
+.buttons button a{
+    text-decoration: none;
+    color: inherit;
+}
 /*
     Menu Grid
     --------
@@ -197,6 +200,7 @@ h2 {
     }
     .menu .card .img img {
         height: 100%;
+        width: auto;
         object-fit: cover;
     }
     .menu .card .description {
