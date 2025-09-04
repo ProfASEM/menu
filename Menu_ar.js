@@ -3,7 +3,7 @@ const menu = [
     {
         id: 1,
         title: "فطائر اللبن الرائب",
-        category: "فطور",
+        category: "Breakfast",
         price: 5.99,
         img: "buttermilkPancake.jpeg",
         desc: "فطائر هشة تقدم مع شراب القيقب والزبدة."
@@ -11,7 +11,7 @@ const menu = [
     {
         id: 2,
         title: "لحم مقدد وبيض",
-        category: "فطور",
+        category: "Breakfast",
         price: 6.99,
         img: "bacon&egg.jpeg",
         desc: "لحم مقدد وبيض كلاسيكي مع خبز محمص."
@@ -19,7 +19,7 @@ const menu = [
     {
         id: 3,
         title: "عجة بالجبن",
-        category: "فطور",
+        category: "Breakfast",
         price: 4.99,
         img: "omlet.jpeg",
         desc: "عجة بالجبن مع أعشاب طازجة."
@@ -27,7 +27,7 @@ const menu = [
     {
         id: 4,
         title: "برجر دجاج",
-        category: "غداء",
+        category: "Lunch",
         price: 8.99,
         img: "chickenBurger.jpeg",
         desc: "برجر دجاج مشوي مع خس وطماطم."
@@ -35,7 +35,7 @@ const menu = [
     {
         id: 5,
         title: "برجر مكسيكي",
-        category: "غداء",
+        category: "Lunch",
         price: 9.49,
         img: "mexicanoBurger.jpeg",
         desc: "برجر لحم بقري مكسيكي حار."
@@ -43,7 +43,7 @@ const menu = [
     {
         id: 6,
         title: "سلطة يونانية",
-        category: "غداء",
+        category: "Lunch",
         price: 7.99,
         img: "greekSalad.jpeg",
         desc: "سلطة طازجة مع جبنة فيتا وزيتون."
@@ -51,7 +51,7 @@ const menu = [
     {
         id: 7,
         title: "برياني دجاج تيكا",
-        category: "عشاء",
+        category: "Dinner",
         price: 12.99,
         img: "chickenTikkaBiryani.jpeg",
         desc: "أرز عطري مع قطع دجاج تيكا."
@@ -59,7 +59,7 @@ const menu = [
     {
         id: 8,
         title: "بيتزا ببروني",
-        category: "عشاء",
+        category: "Dinner",
         price: 11.99,
         img: "pepperoniPizza.jpeg",
         desc: "بيتزا كلاسيكية مع ببروني وجبن."
@@ -67,7 +67,7 @@ const menu = [
     {
         id: 9,
         title: "شريحة لحم",
-        category: "عشاء",
+        category: "Dinner",
         price: 15.99,
         img: "steack.jpeg",
         desc: "شريحة لحم مشوية طرية."
@@ -75,7 +75,7 @@ const menu = [
     {
         id: 10,
         title: "ساندويتش فيليه اللحم",
-        category: "عشاء",
+        category: "Dinner",
         price: 13.99,
         img: "steakFilletSandwich.jpeg",
         desc: "فيليه لحم طري في ساندويتش طازج."
@@ -83,7 +83,7 @@ const menu = [
     {
         id: 11,
         title: "بيني أرابياتا",
-        category: "عشاء",
+        category: "Dinner",
         price: 10.99,
         img: "penneArabiata.jpeg",
         desc: "مكرونة بيني بصلصة الطماطم الحارة."
@@ -105,7 +105,7 @@ filterBtns.forEach(function (btn) {
         // Get the category from the button's data-id
         const category = e.currentTarget.dataset.id;
         // Filter menu items based on category
-        const menuCategory = category === 'الكل' ? menu : menu.filter(function (item) {
+        const menuCategory = category === 'all' ? menu : menu.filter(function (item) {
             return item.category === category;
         });
         // Display filtered menu items
@@ -149,7 +149,7 @@ window.addEventListener('DOMContentLoaded', function () {
             values.push(item.category)
         }
         return values
-    }, ['الكل']);
+    }, ['all']);
     const categoryBtns = categories.map(function (category) {
         return `<button class="filter-btn" data-id="${category}">${category}</button>`
     }).join("");
@@ -166,7 +166,7 @@ window.addEventListener('DOMContentLoaded', function () {
                     return menuItem
                 }
             });
-            if (category === 'الكل') {
+            if (category === 'all') {
                 displayMenuItems(menu)
             }
             else {
